@@ -1,4 +1,7 @@
-# TRABAJO FIN DE GRADO
+### Lucía Angulo Cuadrado. 
+### GRADO EN INGENIERÍA DE TECNOLOGÍAS Y SERVICIOS DE TELECOMUNICACIÓN. 
+### Universidad Politécnica de Madrid.
+# TRABAJO FIN DE GRADO 2023
 ## Diseño y desarrollo de un modelo no supervisado para analizar la correlación entre la respuesta inmunodepresora de pacientes con fallos renales y las distintas etapas de vacunación del SRAS-CoV-2
 El siguiente estudio lleva a cabo un analisis de los datos medicos obtenidos de un grupo de pacientes con enfermedad renal cronica duarante 6 etapas deñ estudio. En este se tienen en cuenta 6 etapas: primera dosis de la vacuna (E1), 28 dias despues de la segunda dosis de la vacuna (E5), 3 meses despues de la segunda dosis de la vacuna (E6), 6 meses despues de la segunda dosis de la vacuna (E7), 9 meses despues de la segunda dosis de la vacuna (E8) y 1 año despues de la segunda dosis de la vacuna (E9).
 El estudio tiene los siguiente objetivos:
