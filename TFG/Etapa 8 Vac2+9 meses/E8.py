@@ -176,3 +176,43 @@ ax.text(0.1, -0.3, leyenda,
 
 # Mostrar el gráfico
 plt.show()
+#----------------------------------------------------Analisis de infeccion y enfermedad----------------------------------------------------------------------------------
+pacientes_infectados = df[df.iloc[:, 119] == 1] 
+pacientes_enfermos = df[df.iloc[:, 120] == 1]  
+pacientes_infectados_tipo = pacientes_infectados.iloc[:, 10].value_counts().sort_index()
+pacientes_enfermos_tipo = pacientes_enfermos.iloc[:, 10].value_counts().sort_index()
+
+# Crear una figura y un conjunto de ejes
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# Configurar las posiciones de las barras en el eje x
+x = [0, 1]  # Dos posiciones: 0 para pacientes infectados, 1 para pacientes enfermos
+
+# Graficar la barra de pacientes infectados dividida por tipo de paciente
+colores = ['red', 'green', 'blue']
+
+# Graficar la barra de pacientes infectados dividida por tipo de paciente
+ax.bar(x[0], pacientes_infectados_tipo.values[1], color=colores[0], label='Paciente con transplante')
+ax.bar(x[0], pacientes_infectados_tipo.values[2], bottom=pacientes_infectados_tipo.values[1], color=colores[1], label='Paciente con Diálisis Peritoneal')
+ax.bar(x[0], pacientes_infectados_tipo.values[3], bottom=pacientes_infectados_tipo.values[1] + pacientes_infectados_tipo.values[2], color=colores[2], label='Paciente con hemodiálisis')
+
+# Graficar la barra de pacientes enfermos dividida por tipo de paciente
+ax.bar(x[1], pacientes_enfermos_tipo.values[1], color=colores[0])
+ax.bar(x[1], pacientes_enfermos_tipo.values[2], bottom=pacientes_enfermos_tipo.values[1], color=colores[1])
+ax.bar(x[1], pacientes_enfermos_tipo.values[3], bottom=pacientes_enfermos_tipo.values[1] + pacientes_enfermos_tipo.values[2], color=colores[2])
+
+
+
+# Configurar las etiquetas y los títulos de los ejes
+ax.set_xticks(x)
+ax.set_xticklabels(['Pacientes Infectados', 'Pacientes Enfermos'])
+ax.set_ylabel('Cantidad de Pacientes')
+ax.set_title('Comparación de Pacientes Infectados y Enfermos por Tipo de Paciente')
+
+# Agregar una leyenda
+ax.legend(fontsize=8)
+
+
+# Mostrar el gráfico
+plt.tight_layout()
+plt.show()
